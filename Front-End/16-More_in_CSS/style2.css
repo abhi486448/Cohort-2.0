@@ -14,11 +14,14 @@ body {
 body{
     background-color:aquamarine;
     padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .box{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     position: relative;
     overflow: hidden;
 }
@@ -41,7 +44,7 @@ body{
     align-items: center;
     justify-content: space-between;
     color: white;
-    padding: 30px;
+    padding: 20px;
 }
 
 .box:hover .bottom{
@@ -54,14 +57,14 @@ body{
     gap: 20px;
 }
 
-.icon h3{
+.icon h4{
     color: black;
     padding: 5px;
     border-radius: 50%;
     background-color: white;
 }
 
-.icon h3:hover{
+.icon h4:hover{
     color: white;
     background-color: red;
 }
