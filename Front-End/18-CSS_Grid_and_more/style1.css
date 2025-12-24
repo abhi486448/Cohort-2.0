@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    padding: 20px;
+
+    grid-template-areas: "left-up top-center top-right"
+                         "left-up center bottom-right"
+                         "left-down left-down bottom-right";
+}
+
+.left-up{
+    grid-area: left-up;
+    background-color: rgb(85, 85, 238);
+}
+
+.top-center{
+    grid-area: top-center;
+    background-color: rgb(68, 247, 247);
+}
+
+.top-right{
+    grid-area: top-right;
+    background-color: peru;
+}
+
+.center{
+    grid-area: center;
+    background-color: blueviolet;
+}
+
+.bottom-right{
+    grid-area: bottom-right;
+    background-color: greenyellow;
+}
+
+.left-down{
+    grid-area: left-down;
+    background-color: gainsboro;
+}
