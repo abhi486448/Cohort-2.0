@@ -1,0 +1,547 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+}
+
+/* header div{
+    background-color: yellow;
+} */
+
+#center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+ul li{
+    list-style: none;
+    font-size: 15px;
+}
+
+#right button{
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+#bt-1{
+    box-sizing: border-box;
+    border: 2px solid rgb(21, 114, 255);
+    background-color: white;
+    color: rgb(21, 114, 255);
+}
+
+#bt-2{
+    border: none;
+    background-color: rgb(21, 114, 255);
+    color: white;
+}
+
+
+#About-firm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px 60px;
+    background-color: #F6F7F9;
+}
+
+#about{
+    width: 100%;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+#about-first{
+    width: 30%;
+    font-size: 40px;
+}
+
+#about-second{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-btn button{
+    border: 1.5px solid rgb(21, 114, 255) ;
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: rgb(21, 114, 255);
+}
+
+#about-btn-1{
+    margin-right: 10px;
+    background-color: rgb(21, 114, 255);
+    color: white;
+}
+
+.about-btn #about-btn-1 span{
+    font-size: 13px;
+    align-self: center;
+}
+
+#About-firm img{
+    width: 100%;
+}
+
+#section-2{
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#section-2 div{
+    text-align: center;
+    width: 150px;
+}
+
+#section-2 div h4{
+    font-size: 70px;
+    font-weight: 500;
+}
+
+#section-2 div p{
+    color: rgb(190, 190, 190);
+}
+
+#section-3{
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F6F7F9;
+}
+
+#section-3 div{
+    width: 490px;
+    height: 490px;
+}
+
+#section-3 div button{
+    border: 1.5px solid rgb(52, 52, 52);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: rgb(52, 52, 52);
+    font-weight: 500;
+    margin-bottom: 40%;
+}
+
+#section-3 div h4{
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+#section-3 div p{
+    font-size: 20px;
+    color: rgb(109, 109, 109);
+}
+
+#section-3-img{
+    background-image: url(./About_us_profile.PNG);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#section-4{
+    padding: 80px 60px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 120px 385px 385px;
+    grid-template-areas: "button button button button"
+                         "explore1 explore1 explore2 explore2"
+                         "card1 card2 card3 card4"
+                         "card5 card6 card7 card8";
+    
+}
+
+#section-4 #sec-4-btn{
+    grid-area: button;
+    padding-bottom: 20px;
+}
+#section-4 button{
+    border: 1.5px solid rgb(52, 52, 52);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: rgb(52, 52, 52);
+    font-weight: 500;
+    margin-bottom: 40%;
+}
+
+#section-4 :nth-child(2){
+    grid-area: explore1;
+}
+
+#section-4 :nth-child(2) h4{
+    font-size: 34px;
+    font-weight: 500;
+    padding-right: 40px;
+}
+
+#section-4 :nth-child(3){
+    grid-area: explore2;
+    color: rgb(168, 168, 168);
+    display: flex;
+    align-items: center;
+}
+
+#section-4 :nth-child(3) p{
+    padding-bottom: 30px;
+}
+
+.card{
+    border-radius: 15px;
+}
+#section-4 :nth-child(4){
+    grid-area: card1;
+    background-image: url(./card-1.PNG);
+    background-size: 100%;
+    background-position: center;
+}
+
+#section-4 :nth-child(5){
+    grid-area: card2;
+    background-image: url(./card-2.PNG);
+    background-size: 100%;
+    background-position: center;
+}
+
+#section-4 :nth-child(6){
+    grid-area: card3;
+    background-image: url(./card-3.PNG);
+    background-size: 100%;
+    background-position: center;
+}
+
+#section-4 :nth-child(7){
+    grid-area: card4;
+    background-image: url(./card-4.PNG);
+    background-size: 100%;
+    background-position: center;
+}
+
+#section-4 :nth-child(8){
+    grid-area: card5;
+    background-image: url(./card-5.PNG);
+    background-size: 100%;
+    background-position: center;
+}
+
+#section-4 :nth-child(9){
+    grid-area: card6;
+    background-image: url(./card-6.PNG);
+    background-size: 100%;
+    background-position: center;
+}
+
+#section-4 :nth-child(10){
+    grid-area: card7;
+    background-image: url(./card-7.PNG);
+    background-size: 100%;
+    background-position: center;
+}
+
+#section-4 :nth-child(11){
+    grid-area: card8;
+    background-image: url(./card-8.PNG);
+    background-size: 100%;
+    background-position: center;
+}
+
+#section-5{
+    padding: 80px 60px;
+    display: grid;
+    grid-gap: 20px;
+    background-color: #F6F7F9;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 120px 446px;
+    grid-template-areas: "button button button button"
+                         "explore1 explore1 explore2 explore2"
+                         "card1 card1 card2 card2";
+    
+}
+
+#section-5 #sec-5-btn{
+    grid-area: button;
+    padding-bottom: 20px;
+}
+#section-5 button{
+    border: 1.5px solid rgb(52, 52, 52);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: rgb(52, 52, 52);
+    font-weight: 500;
+    margin-bottom: 40%;
+}
+
+#section-5 :nth-child(2){
+    grid-area: explore1;
+}
+
+#section-5 :nth-child(2) h4{
+    font-size: 34px;
+    font-weight: 500;
+    padding-right: 40px;
+}
+
+#section-5 :nth-child(3){
+    grid-area: explore2;
+    color: rgb(168, 168, 168);
+    display: flex;
+    align-items: center;
+}
+
+#section-5 :nth-child(3) p{
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+}
+
+#section-5 :nth-child(4){
+    grid-area: card1;
+    background-image: url(./mildston-profile.PNG);
+    background-size: 100%;
+    background-position: center;
+}
+
+#section-5 :nth-child(5){
+    grid-area: card2;
+    background-image: url(./mild-stone.PNG);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#section-6{
+    padding: 80px 60px;
+    display: grid;
+    grid-row-gap: 15px;
+    grid-column-gap: 100px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 200px 70px ;
+    grid-template-areas: "logo profile"
+                         "des profile"
+                         "ceo profile";
+}
+
+#section-6 #logo{
+    grid-area: logo;
+    display: flex;
+    gap: 223px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ceo-logo{
+    width: 150px;
+}
+
+#section-6 :nth-child(2){
+    grid-area: des;
+    font-size: 23px;
+    margin: auto;
+}
+
+#section-6 :nth-child(3){
+    grid-area: ceo;
+    font-size: 22px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#section-6 :nth-child(3) p span{
+    color: rgb(146, 146, 146);
+    margin-left: 20px;
+}
+
+#section-6 :nth-child(4){
+    grid-area: profile;
+    background-image: url(./ceo.PNG);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+#section-7{
+    padding: 80px 80px;
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 100px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 120px 300px ;
+    grid-template-areas: "button location"
+                         "des location"
+                         "contect location";
+}
+
+#s7-1{
+    grid-area: button;
+}
+
+#s7-1 button{
+    border: 1.5px solid rgb(52, 52, 52);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: rgb(52, 52, 52);
+    font-weight: 500;
+}
+
+#s7-2{
+    grid-area: des;
+    font-size: 35px;
+}
+
+#s7-3{
+    grid-area: contect;
+}
+
+#s7-3 p{
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+#s7-3 :nth-child(2n-1){
+    color: rgb(149, 149, 149);
+    font-size: 20px;
+}
+
+#s7-3 p img{
+    height: 45px;
+}
+
+#s7-4{
+    grid-area: location;
+    background-image: url(./location.PNG);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+footer{
+    padding-bottom: 10px;
+}
+
+#footer{
+    padding: 60px 60px;
+    display: grid;
+    background-color: #232325;
+    border-radius: 20px;
+    margin: 0 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 250px 100px ;
+    grid-template-areas: "logo logo logo logo logo"
+                         "search search fnev1 fnev2 fnev3"
+                         "arr arr arr arr arr";
+}
+
+#f-1{
+    grid-area: logo;
+}
+
+#f-1 img{
+    height: 50px;
+}
+
+#f-2{
+    grid-area: search;
+    color: white;
+}
+
+#f-2 h4{
+    margin-top: 20px;
+    font-size: 23px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+#f-2 div{
+    display: inline-block;
+    width: 300px;
+    border-radius: 20px;
+    padding: 13px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 6px;
+    background-color: #3A3839;
+}
+
+#f-2 button{
+    padding: 12px 25px;
+    border-radius: 20px;
+    border: none;
+    font-size: 15px;
+    background-color: #0360FD;
+    color: white;
+}
+
+#f-3{
+    grid-area: fnev1;
+}
+
+#f-4{
+    grid-area: fnev2;
+}
+
+#f-5{
+    grid-area: fnev3;
+}
+
+.h4{
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: white;
+}
+
+#footer p{
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: white;
+}
+
+#f-6{
+    grid-area: arr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#f-6 :nth-child(1){
+    height: 25px;
+}
+
+#f-6 :nth-child(3){
+    height: 50px;
+}
