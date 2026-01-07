@@ -9,4 +9,4 @@ units -
 7. em - according to the parent and can be controlled by parent
 8. rem (1 rem = 16px) - according to the root and can be controlled by root
 
-task - 
+task - https://dribbble.com/shots/21661002-AI-Project-Showcase-Landing-Page
