@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.root {
+    width: 100%;
+    height: 100%;
+    background-color: #F3F3F3;
+    color: #2B2B2B;
+
+    div {
+        width: 100%;
+        height: 100%;
+
+        .nav {
+            width: 100%;
+            padding: 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .left-nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 80px;
+
+                img {
+                    width: 50px;
+                }
+
+                ul {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 30px;
+
+                    li {
+                        font-weight: 500;
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            .right-nav {
+                button {
+                    font-weight: 600;
+                    font-size: 15px;
+                    border: none;
+                    text-decoration: underline;
+                }
+
+                i {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .hero {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #F3F3F3;
+            color: #2B2B2B;
+            filter: grayscale(100%);
+
+            .left-hero {
+                width: 33%;
+                display: flex;
+                padding: 60px;
+                flex-direction: column;
+                padding-left: 100px;
+                gap: 105px;
+                position: relative;
+
+                .timeline-hero {
+                    width: 638px;
+                    height: 20px;
+                    position: absolute;
+                    left: -265px;
+                    top: 279px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 40px;
+                    rotate: 270deg;
+
+                    .timeline-p1 {
+                        display: block;
+                        width: 40px;
+                        height: 20px;
+                    }
+
+                    .timeline-br {
+                        display: block;
+                        background-color: black;
+                        width: 350px;
+                        height: 1px;
+                    }
+
+                    .timeline-p2 {
+                        display: block;
+                        width: 125px;
+                        height: 20px;
+                    }
+                }
+
+                .project-hero {
+                    width: 300px;
+                    height: 200px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .com-project{
+                        width: 50%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        .com-h4 {
+                            font-size: 40px;
+                            font-weight: 500;
+                        }
+
+                        .com-p {
+                            font-size: 15px;
+                            font-weight: 500;
+                        }
+                    }
+                    .startup-project{
+                        width: 50%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        .start-h4 {
+                            font-size: 40px;
+                            font-weight: 500;
+                        }
+
+                        .start-p {
+                            font-size: 15px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+
+                .text-hero {
+                    height: 300px;
+                    display: flex;
+                    flex-direction: column;
+
+                    .text-h4 {
+                        font-size: 200px;
+                        font-weight: 500;
+                    }
+
+                    .text-p {
+                        font-size: 15px;
+                        font-weight: 600;
+                    }
+                }
+
+                .button-con-hero {
+                    .button-hero {
+                        border: none;
+                        background-color:transparent ;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .right-hero {
+                width: 67%;
+                height: 100%;
+                background-image: url(http://127.0.0.1:5500/task/img/right-hero-img-1.png);
+                background-position: top;
+                background-size: cover;
+            }
+        }
+    }
+}
