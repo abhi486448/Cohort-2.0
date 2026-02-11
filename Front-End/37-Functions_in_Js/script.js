@@ -75,4 +75,89 @@
     // let arr = [1, 2, 3, 4];
     // abcd(...arr);
 
+    // - `Classic Function`,`Nested Function` (function within function), `Scope Chain` in Javascript.
+
+    // Classic Function
+    // function abcd(){
+
+    // }
+    // abcd();
+
+    // Nested Function
+    // function abcd(){
+    //     function defg(){
+
+    //     }
+    //     defg();
+    // }
+    // abcd();
+
+    // Scope Chain
+    // let a = 12; // Global scope can used anywhere in the code
+    // function abcd(){
+    //     let b = 13; // function scope can used anywhere in the function
+    //     function defg(){
+    //         console.log(b);
+    //     }
+    //     defg();
+    // }
+    // abcd();
+
+    // - Understanding Immediately Invoked Function Expression (IIFE).
+    // let balance = 2000; // i can be access and manupulated by console 
+    // (function(){
+    //     let balance2 = 2000; // but it can not access and manupulated by console because it is private varaible created inside iife
+    // })();
+
+    // 13. Functions in JavaScript
+    // - More Function in JavaScript - [`Arrow Function` , `Fat Arrow` , `Anonyous` , `Higher Order` , `Callback` , `First Class` , `Pure Function` , `Impire Function`]
+
+    // Fat Arrow or Arrow Function
+    // let fnc = () => {
+    //     console.log("HeyHeyHey");
+    // };
+    // fnc();
+
+    // Anonyous function -> function without name
+    // function(){
+
+    // };
+
+    // Higher Order
+    // hof -> ek aisa fnc jo ki return karde ek aur function
+    // wo fnc accept karle ek aur fnc parameter mein
+    // function abcd(){ // it is hof
+    //     return function(){
+
+    //     }
+    // } 
+    //or
+    // function abcd(a){ 
+
+    // };
+    // abcd(function(){
+
+    // });
+
+    // Callback
+    // function abcd(a){
+
+    // }
+    // abcd(function(){
+
+    // }) // function which is given as argument is known as Callback
+
+    // first class function
+    // fcf ek concept hai -> function us language mein variable ki trah use ho sakte hai
+    // let abcd = function(){
+
+    // }
+    //or
+    // function abcd(a,b){
+
+    // }
+    // abcd(function(){
+
+    // },23);
+
     
