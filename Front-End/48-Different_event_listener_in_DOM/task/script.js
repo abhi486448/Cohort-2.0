@@ -46,10 +46,10 @@ function appendBtn(){
             clutter4 = `<div class="extra extra1" data-index="${idx}" data-name="${arr3[count1]}">${arr3[count1]}</div>`;
             elem.innerHTML = clutter4;
             count1++;
+            elem.classList = `s-btn-${i} s-btn`;
             idx++;
-            elem.classList = `s-btn-${i}, s-btn`;
         } else {
-            elem.classList = `s-btn-${i}, s-btn`;
+            elem.classList = `s-btn-${i} s-btn`;
             elem.setAttribute("data-index",`${idx}`);
             idx++;
         }
@@ -84,13 +84,21 @@ function OnPressKey(){
         if(arr1.includes(elm.key.toUpperCase())){
             n = arr1.indexOf(elm.key.toUpperCase());
             FindKeyAndPlay(n+27);
-            // var elem = document.querySelector(`.btn-${n+7}`);
-            // elem.style.backgroundColor = "radial-gradient(circle,rgba(255, 255, 255, 1) 46%, rgba(148, 187, 233, 1) 100%)"
+            var elem = document.querySelector(`.btn-${n+8}`);
+            elem.classList.add("btn-active");
+            setTimeout(() => {
+                elem.classList.remove("btn-active");
+            }, 200);
             // console.log(elem);
         }
         if(arr3.includes(elm.key.toUpperCase())){
-            n = arr3.indexOf(elm.key.toUpperCase()) + 61;
-            FindKeyAndPlay(n);
+            n = arr3.indexOf(elm.key.toUpperCase());
+            FindKeyAndPlay(n+ 62);
+            var elem1 = document.querySelector(`.s-btn-${n+6}`);
+            elem1.classList.add("s-btn-active");
+            setTimeout(() => {
+                elem1.classList.remove("s-btn-active");
+            }, 200);
         }
     })
 }
