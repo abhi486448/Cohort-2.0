@@ -48,38 +48,22 @@ main {
     background: #FFF;
     background: radial-gradient(circle,rgba(255, 255, 255, 1) 46%, rgba(148, 187, 233, 1) 100%);
 }
-.s-btn-1 {
+.s-btn {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     width: 20px;
-    height: 160px;
+    height: 150px;
     border: 2px solid rgb(0, 0, 0);
     background-color: rgb(46, 46, 46);
     position: absolute;
-    top: 0;
-    left: 22px;
     z-index: 9;
 }
 
-.s-btn-2 {
-    width: 20px;
-    height: 160px;
-    border: 2px solid rgb(0, 0, 0);
-    background-color: rgb(46, 46, 46);
-    position: absolute;
-    top: 0;
-    left: 64px;
-    z-index: 9;
+.s-btn:active {
+    background: radial-gradient(circle,rgba(46, 46, 46, 1) 46%, rgba(148, 187, 233, 1) 100%);
 }
 
-.s-btn-3 {
-    width: 20px;
-    height: 160px;
-    border: 2px solid rgb(0, 0, 0);
-    background-color: rgb(46, 46, 46);
-    position: absolute;
-    top: 0;
-    left: 22px;
-    z-index: 9;
-}
 
 .btn>div {
     width: 100%;
@@ -106,4 +90,9 @@ main {
     border-radius: 4px;
     margin-bottom: 10px;
     border-bottom: 2px solid rgb(150, 146, 146);
+}
+
+.extra1{
+    color: #fff;
+    background-color: #1e1e1e;
 }
