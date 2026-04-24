@@ -155,3 +155,27 @@ section {
 .right > div h6 {
     pointer-events: none;
 }
+
+.mute {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #333;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.mute:active {
+    scale: 0.9;
+}
+
+.mute i {
+    font-size: 20px;
+    pointer-events: none;
+}

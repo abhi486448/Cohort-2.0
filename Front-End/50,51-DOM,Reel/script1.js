@@ -1,5 +1,6 @@
 const reels = [
     {
+        isMute: true,
         id: 1,
         username: "alex_travels",
         userProfile: "https://i.pravatar.cc/150?u=alex_travels",
@@ -12,6 +13,7 @@ const reels = [
         isFollowed: true,
     },
     {
+        isMute: true,
         id: 2,
         username: "codewithriya",
         userProfile: "https://i.pravatar.cc/150?u=codewithriya",
@@ -24,6 +26,7 @@ const reels = [
         isFollowed: false,
     },
     {
+        isMute: true,
         id: 3,
         username: "foodie_arjun",
         userProfile: "https://i.pravatar.cc/150?u=foodie_arjun",
@@ -36,6 +39,7 @@ const reels = [
         isFollowed: true,
     },
     {
+        isMute: true,
         id: 4,
         username: "dance.with.priya",
         userProfile: "https://i.pravatar.cc/150?u=dance.with.priya",
@@ -48,6 +52,7 @@ const reels = [
         isFollowed: true,
     },
     {
+        isMute: true,
         id: 5,
         username: "fitnessbyrohan",
         userProfile: "https://i.pravatar.cc/150?u=fitnessbyrohan",
@@ -66,7 +71,10 @@ function FillReel() {
     var clutter = "";
     reels.forEach(function (elem, idx) {
         clutter += `<div class="reel" id="reel-${idx}">
-                    <video autoplay loop muted class="main-img"
+                    <div class="mute" data-index="${idx}">
+                        ${elem.isMute?'<i class="ri-volume-mute-line"></i>':'<i class="ri-volume-up-line"></i>'}
+                    </div>
+                    <video autoplay loop ${elem.isMute?'muted':''} class="main-img"
                         src="${elem.video}"
                         alt=""></video>
 
@@ -128,6 +136,21 @@ function FillBTN(id, check){
     // console.log(BTN);
 }
 
+function MuteBTN(id, check){
+    var element1 = document.querySelector(`#reel-${id} .mute`);
+    var element2 = document.querySelector(`#reel-${id} video`);
+
+    if (check) {
+        element1.innerHTML = '<i class="ri-volume-mute-line"></i>';
+        element2.muted = true;
+    } else {
+        element1.innerHTML = '<i class="ri-volume-up-line"></i>';
+        element2.muted = false;
+    }
+
+    console.log(element2.hasAttribute('muted'));
+}
+
 function BTNEvent() {
     AllReels.addEventListener('click', function (dets) {
         if (dets.target.className == 'like') {
@@ -152,8 +175,23 @@ function BTNEvent() {
             }
             FillBTN(dets.target.dataset.index, reels[dets.target.dataset.index].isFollowed);
         }
+
+        if (dets.target.className == 'mute') {
+            console.log(dets);
+            // console.log(dets.target.dataset.index);
+            if (reels[dets.target.dataset.index].isMute) {
+                reels[dets.target.dataset.index].isMute = false;
+
+            } else {
+                
+                reels[dets.target.dataset.index].isMute = true;
+            }
+            MuteBTN(dets.target.dataset.index, reels[dets.target.dataset.index].isMute);
+        }
     })
 }
+
+
 
 BTNEvent();
 FillReel();
