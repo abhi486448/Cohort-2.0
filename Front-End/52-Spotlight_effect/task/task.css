@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --x: 100px;
+    --y: 100px;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+video{
+    width: 99%;
+    height: 99%;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(200px at var(--x) var(--y) , rgba(255, 255, 255, 0) , rgba(0, 0, 0, 0.879));
+    position: absolute;
+    z-index: 10;
+}
