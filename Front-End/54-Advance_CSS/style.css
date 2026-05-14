@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@property --bgColor {
+    syntax: "<color>";
+    initial-value: rgb(255, 65, 207);
+    inherits: false;
+}
+
+@keyframes changeBG {
+    from{
+        --bgColor: red;
+        border-radius: 0;
+        transform: translateX(0);
+        /*limitations*/
+        /* display: flex; */
+        /* visibility: visible; */
+    }
+    to{
+        --bgColor: blue;
+        border-radius: 50px;
+        transform: translateX(100px);
+        /*limitations*/
+        /* display: none; */
+        /* visibility: hidden; */
+    }
+}
+
+.box {
+    width: 400px;
+    height: 200px;
+    border: 1px solid #fff;
+
+    background-color: var(--bgColor);
+    animation: changeBG 5s forwards ;
+}
