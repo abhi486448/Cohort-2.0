@@ -47,15 +47,29 @@ body {
     gap: 10px;
     border-radius: 10px;
 
-    box-shadow: 0 0 60px rgb(69, 69, 244);
+    
     background:
         linear-gradient(black) padding-box ,
-        conic-gradient(from var(--rotate),black, black,rgb(69, 69, 244),black,black) border-box;
+        conic-gradient(from var(--rotate),black, black,rgb(255,0,123),black,black) border-box;
     
-    border: 5px solid rgba(255, 255, 255, 0);
+    border: 0px solid rgba(255, 255, 255, 0);
 
     animation: rotateBG 3s;
     animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+    transition: all 0.3s linear;
+    box-shadow: 0 0 0px rgb(255,0,195);
+    color: #fff;
+    text-shadow: 0 0 0px rgb(255,0,123);
+}
+
+.box:hover {
+    box-shadow: 0 0 50px rgb(255,0,195);
+    animation-play-state: running;
+    border-width: 5px;
+    color:rgb(255,0,123);
+    text-shadow: 0 0 10px rgb(255,0,123);
 }
 
 .box img {
