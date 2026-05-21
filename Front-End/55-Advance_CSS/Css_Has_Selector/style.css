@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.box {
+    height: 200px;
+    width: 200px;
+    transition: all 0.3s linear;
+}
+
+.red {
+    background-color: rgb(110, 21, 21);
+}
+
+.blue {
+    background-color: rgb(23, 23, 110);
+}
+
+.green {
+    background-color: rgb(26, 97, 26);
+}
+
+body:has(.box:hover) .box{
+    transform: scale(0.8);
+    opacity: 0.8;
+}
+
+body .box:hover {
+    transform: scale(1.2) !important;
+    opacity: 1 !important;
+}

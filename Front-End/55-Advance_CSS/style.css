@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    anchor-name: --same-anchor;
+}
+
+
+.box {
+    height: 200px;
+    width: 200px;
+}
+
+.box:hover {
+    anchor-name: --same-anchor;
+}
+
+.red {
+    background-color: rgb(110, 21, 21);
+}
+
+.blue {
+    background-color: rgb(23, 23, 110);
+}
+
+.green {
+    background-color: rgb(26, 97, 26);
+}
+
+.anchor {
+    background-color: #ffffff;
+    border-radius: 10px;
+    top: anchor(top);
+    left: anchor(left);
+    bottom: anchor(bottom);
+    right: anchor(right);
+    position: absolute;
+    pointer-events: none;
+    position-anchor: --same-anchor;
+    /* height: 50px;
+    width: 60px; */
+    transition: all 0.3s linear;
+    mix-blend-mode: difference;
+}
