@@ -6,7 +6,10 @@ const path = require("path")
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: "https://day-10-mohg.onrender.com",
+    credentials: true,
+  }))
 app.use(express.static("./public"))
 
 app.post('/api/notes', async (req, res)=>{
