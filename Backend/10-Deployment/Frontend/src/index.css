@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+#root {
+  background-color: black;
+  color: white;
+}
+
+.notes {
+    padding-inline: 3rem;
+    padding-block: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+.note {
+    padding: 1rem;
+    background-color: rgb(24, 24, 24);
+    border-radius: 1rem;
+}
+
+.create-note-form {
+    padding-inline: 3rem;
+    padding-block: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.update-desc-form {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.delete-btn {
+    margin-top: 0.5rem;
+}
