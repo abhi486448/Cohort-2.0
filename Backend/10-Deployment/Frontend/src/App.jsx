@@ -20,7 +20,7 @@ const App = () => {
   ])
 
   function getNotes(){
-    axios.get("http://localhost:3000/api/notes")
+    axios.get("https://day-10-mohg.onrender.com/api/notes")
     .then(res =>{
       setNotes(res.data.notes)
     })
@@ -34,7 +34,7 @@ const App = () => {
     e.preventDefault()
 
     const { title, description} = e.target
-    axios.post("http://localhost:3000/api/notes", {"title": title.value, "description": description.value})
+    axios.post("https://day-10-mohg.onrender.com/api/notes", {"title": title.value, "description": description.value})
     .then(res =>{
       console.log(res)
       getNotes()
@@ -46,7 +46,7 @@ const App = () => {
 
     const {description} = e.target
     
-    axios.patch("http://localhost:3000/api/notes/" + id, {"description": description.value})
+    axios.patch("https://day-10-mohg.onrender.com/api/notes/" + id, {"description": description.value})
     .then(res =>{
       console.log(res)
       getNotes()
@@ -54,7 +54,7 @@ const App = () => {
   }
 
   function handleDeleteBTN(id){
-    axios.delete("http://localhost:3000/api/notes/" + id)
+    axios.delete("https://day-10-mohg.onrender.com/api/notes/" + id)
     .then(res =>{
       console.log(res)
       getNotes()
