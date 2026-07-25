@@ -1,5 +1,5 @@
-const userModel = require("../models/user.models")
-const crypto = require("crypto")
+const userModel = require("../models/user.model")
+const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 
 async function reginserController(req, res) {
@@ -34,7 +34,7 @@ async function reginserController(req, res) {
         })
     }
 
-    const hash = crypto.createHash("sha256").update(password).digest("hex")
+    const hash = await bcrypt.hash(password, 10)
 
     const user = await userModel.create({
         username,
@@ -96,9 +96,8 @@ async function loginController(req, res) {
         })
     }
 
-    const hash = crypto.createHash("sha256").update(password).digest("hex")
 
-    const isCurrectPassword = hash === user.password
+    const isCurrectPassword = await bcrypt.compare(password, user.password)
 
     if(!isCurrectPassword){
         return res.status(401).json({

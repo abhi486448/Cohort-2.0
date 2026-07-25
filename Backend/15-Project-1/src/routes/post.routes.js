@@ -1,0 +1,15 @@
+const express = require("express")
+const postRouter = express.Router()
+const postController = require("../controller/post.controller")
+const multer = require("multer")
+const upload = multer({ storage: multer.memoryStorage() })
+
+
+/**
+ * /api/post
+ * - req.body = { caption, image-file }
+ */
+
+postRouter.post("/", upload.single("chacha"), postController.createPostController)
+
+module.exports = postRouter
