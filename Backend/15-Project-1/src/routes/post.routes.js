@@ -10,6 +10,6 @@ const upload = multer({ storage: multer.memoryStorage() })
  * - req.body = { caption, image-file }
  */
 
-postRouter.post("/", upload.single("chacha"), postController.createPostController)
+postRouter.post("/", upload.single("image"), postController.createPostController)
 
 module.exports = postRouter
