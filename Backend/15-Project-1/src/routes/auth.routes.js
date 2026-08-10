@@ -4,13 +4,13 @@ const authController = require("../controller/auth.controler")
 
 
 /**
- * registur  /api/auth/register
+ * Post registur  /api/auth/register
  */
 
 authRouter.post("/register", authController.reginserController)
 
 /**
- * login  /api/auth/login
+ * Get login  /api/auth/login
  */
 
 authRouter.post("/login", authController.loginController)
