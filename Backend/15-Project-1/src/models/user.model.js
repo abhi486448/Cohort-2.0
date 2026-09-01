@@ -20,6 +20,22 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "https://ik.imagekit.io/dhfewvav1/insta_clone/img.png"
     },
+
+    /* 2000 */
+    /* id = 12 bytes */
+    /* 12*2000 data in array */
+    /* but a mongodb docment can be only of 16 mb only */
+    /* it will fail when there is more user id */
+    /* solution is Edge Collection */
+    // followers: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "users"
+    // }],
+
+    // following: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "users"
+    // }],
 })
 
 const userModel = mongoose.model("users", userSchema)
