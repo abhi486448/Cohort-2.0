@@ -66,7 +66,63 @@ async function unfollowUserController(req, res){
     })
 }
 
+async function getRequestsUserController(req, res){
+    const username = req.user.username;
+
+    const Requests = await followModel.find(
+        {
+            followee: username,
+        }
+    )
+
+    if(Requests.length == 0){
+        return res.status(200).json({
+            message: "You have no requests"
+        })
+    }
+
+    res.status(200).json({
+        message: "fetched all requests",
+        Requests,
+    })
+}
+
+async function updateRequestUserController(req, res){
+    const username = req.user.username;
+    const requestid = req.params.requestid;
+    const {status} = req.body;
+
+    const checkStatus = await followModel.findById(requestid)
+
+    if(checkStatus.status != "pending"){
+        return res.status(200).json({
+            message: "request is already resolved"
+        })
+    }
+
+    const requestdata = await followModel.findByIdAndUpdate(
+        requestid,
+        {
+            status : status,
+        },
+        {
+            returnDocument: 'after',
+            runValidators: true,
+        }
+    )
+
+
+    res.status(200).json({
+        message: "status updated successfully",
+        requestdata,
+        username
+    })
+
+}
+
 module.exports = {
     followUserController,
     unfollowUserController,
+    getRequestsUserController,
+    updateRequestUserController,
 }
