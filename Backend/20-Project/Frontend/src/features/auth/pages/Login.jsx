@@ -7,18 +7,17 @@ import "../style/form.scss"
 const Login = () => {
 
     const {user, loading, handleLogin } = useAuth()
+    const navigate = useNavigate()
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
-    const navigate = useNavigate()
 
     const handleSubmit = async (e)=> {
         e.preventDefault();
 
         await handleLogin(username, password)
 
-        console.log("user Logedin")
         navigate("/")
     }
     if(loading){
