@@ -16,7 +16,7 @@ const CreatePost = () => {
     e.preventDefault()
     const file = postImageInputFileRef.current.files[0]
     await handleCreatePost(file, caption)
-    navigate("/")
+    navigate("/feed")
   }
 
   if(loading){

@@ -17,7 +17,7 @@ const Register = () => {
 
         await handleRegister(username, email, password)
 
-        navigate("/")
+        navigate("/feed")
         
     }
 
