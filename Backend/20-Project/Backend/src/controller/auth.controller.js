@@ -2,6 +2,12 @@ const userModel = require("../models/user.model")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 
+const authCookieOptions = {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+}
+
 async function reginserController(req, res) {
     const { username, email, password, bio, profileImage } = req.body
 
@@ -55,7 +61,7 @@ async function reginserController(req, res) {
         }
     )
 
-    res.cookie("token", token)
+    res.cookie("token", token, authCookieOptions)
 
     res.status(201).json({
         message: "user created successfully",
@@ -115,7 +121,7 @@ async function loginController(req, res) {
         { expiresIn: "1d"}
     )
 
-    res.cookie("token", token)
+    res.cookie("token", token, authCookieOptions)
 
     res.status(200).json({
         message: "user logged in",
