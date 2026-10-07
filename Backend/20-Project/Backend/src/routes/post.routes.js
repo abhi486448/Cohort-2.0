@@ -4,6 +4,8 @@ const postController = require("../controller/post.controller")
 const multer = require("multer")
 const upload = multer({ storage: multer.memoryStorage() })
 const identifyUser = require("../middlewares/auth.middleware")
+const paginateResult = require("../middlewares/post.middleware")
+const postModel = require("../models/post.model")
 
 
 /**
@@ -44,6 +46,6 @@ postRouter.post("/unlike/:postid",identifyUser, postController.unlikePostControl
  * @description get all the post created in the db
  * @access private
  */
-postRouter.get("/feed", identifyUser, postController.getFeedController)
+postRouter.get("/feed", identifyUser, paginateResult(postModel), postController.getFeedController)
 
 module.exports = postRouter

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { forwardRef} from 'react'
 import { usePost } from '../hooks/usePost'
 
-const Post = ({user, post, loading, handleLikedPost, handleUnlikedPost}) => {
+const Post = forwardRef(function Post({user, post, loading, handleLikedPost, handleUnlikedPost}, ref){
 
     return (
-        <div className="post">
+        <div className="post" ref={ref}>
             <div className="user">
                 <div className="img-wrapper">
                     <img src={user.profileImage} alt="" />
@@ -31,6 +31,6 @@ const Post = ({user, post, loading, handleLikedPost, handleUnlikedPost}) => {
             </div>
         </div>
     )
-}
+})
 
 export default Post

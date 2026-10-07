@@ -6,9 +6,10 @@ const api = axios.create({
 })
 
 
-export async function getFeet(){
-    const response = await api.get("/api/posts/feed")
+export async function getFeed(feedPageNo, feedLimit){
+    const response = await api.get(`/api/posts/feed?page=${feedPageNo}&limit=${feedLimit}`)
 
+    console.log(response.data)
     return response.data
     
 }

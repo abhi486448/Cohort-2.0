@@ -14,7 +14,7 @@ async function createPostController(req, res) {
 
     const { caption } = req.body
 
-    
+
 
     const file = await imagekit.files.upload({
         file: await toFile(Buffer.from(req.file.buffer), 'file'),
@@ -36,12 +36,12 @@ async function createPostController(req, res) {
 
 }
 
-async function getPostController(req, res){
-    
+async function getPostController(req, res) {
+
 
     const userId = req.user.id
 
-    const posts = await postModel.find( { user: userId } )
+    const posts = await postModel.find({ user: userId })
 
     res.status(200).json({
         message: "posts fetch successfully",
@@ -49,22 +49,22 @@ async function getPostController(req, res){
     })
 }
 
-async function getPostDetailsController(req, res){
-    
+async function getPostDetailsController(req, res) {
+
 
     const userId = req.user.id
     const postId = req.params.postId
 
-    const post = await postModel.findById(  postId  )
+    const post = await postModel.findById(postId)
 
-    if(!post){
+    if (!post) {
         return res.status(404).json({
             message: "Post not found"
         })
     }
 
     const isValidUser = post.user.toString() === userId
-    if(!isValidUser){
+    if (!isValidUser) {
         return res.status(403).json({
             message: "Forbbiden content"
         })
@@ -76,13 +76,13 @@ async function getPostDetailsController(req, res){
     })
 }
 
-async function likePostController(req, res){
+async function likePostController(req, res) {
     const username = req.user.username
     const postId = req.params.postid
 
     const post = await postModel.findById(postId)
 
-    if(!post){
+    if (!post) {
         return res.status(404).json({
             message: "Post not found."
         })
@@ -99,7 +99,7 @@ async function likePostController(req, res){
     })
 }
 
-async function unlikePostController(req, res){
+async function unlikePostController(req, res) {
     const username = req.user.username
     const postId = req.params.postid
 
@@ -108,22 +108,25 @@ async function unlikePostController(req, res){
         user: username,
     })
 
-    if(!like){
+    if (!like) {
         return res.status(400).json({
             message: "post didn't liked"
         })
     }
 
-    await likeModel.findByIdAndDelete({_id: like._id})
+    await likeModel.findByIdAndDelete({ _id: like._id })
 
     res.status(201).json({
         message: "Post un like successfully"
     })
 }
 
-async function getFeedController(req, res){
+async function getFeedController(req, res) {
     const user = req.user
-    const posts = await Promise.all((await postModel.find().sort({_id:-1}).populate("user").lean())
+
+    const paginate = res.paginateResult
+
+    const posts = await Promise.all((await postModel.find().limit(paginate.limit).skip(paginate.startIndex).sort({_id:-1}).populate("user").lean())
         .map(async (post)=> {
 
             const isLiked = await likeModel.findOne({
@@ -137,7 +140,11 @@ async function getFeedController(req, res){
 
     res.status(200).json({
         message: "Feched all posts successfully.",
-        posts
+        posts,
+        next: paginate.next,
+        previous: paginate.previous,
+        startIndex: paginate.startIndex
+
     })
 }
 
