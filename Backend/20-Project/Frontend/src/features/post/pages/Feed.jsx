@@ -37,7 +37,7 @@ const Feed = () => {
                             return <Post key={post._id} user={post.user} post={post} loading={loading} handleLikedPost={handleLikedPost} handleUnlikedPost={handleUnlikedPost} />
                         }
                     })}
-                    <div>{loading && "loading..."}</div>
+                    <div className='loading'>{loading && "Loading..."}</div>
                 </div>
             </div>
         </main>
