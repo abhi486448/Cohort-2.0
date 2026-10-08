@@ -6,12 +6,6 @@ import Nav from '../../shared/components/Nav'
 
 const Feed = () => {
     const {loading, feed, handleFeed, handleLikedPost, handleUnlikedPost, feedHasMore, setFeedPageNo } = usePost()
-
-    
-    
-    useEffect(() => {
-        handleFeed()
-    }, [])
     
     const observer = useRef()
     const lastPostElementRef = useCallback(node => {
