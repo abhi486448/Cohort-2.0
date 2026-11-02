@@ -3,7 +3,7 @@ import "../style/profile.scss"
 
 const ProfilePage = () => {
   return (
-    <main>
+    <main className='main'>
         <section className='upper'>
             <div className='wrapper'>
                 <img src="https://i.pinimg.com/736x/c5/20/86/c5208616039e8375e09ebb4188cf0a32.jpg" alt="" />
