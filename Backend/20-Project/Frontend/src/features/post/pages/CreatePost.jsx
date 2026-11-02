@@ -40,6 +40,7 @@ const CreatePost = () => {
                  value={caption}
                  type="text" 
                  name='caption' 
+                 placeholder='Enter Caption'
                  id='caption'/>
                 <button className='button primery-button' >Create</button>
             </form>
